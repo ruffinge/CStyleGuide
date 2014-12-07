@@ -348,6 +348,7 @@ contents directly between the tags on the same line.
 
 #### Braces ####
 When programming in CSS, follow the "end-of-line" opening brace style.
+
 * Opening braces should always be on the same line as their parent.
 * Closing braces should alaways be on their own line, aligned horizontally with
   their open statement
