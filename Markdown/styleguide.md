@@ -1,5 +1,5 @@
 General-Purpose Style Guide
-====================
+===========================
 
 Introduction
 ------------
