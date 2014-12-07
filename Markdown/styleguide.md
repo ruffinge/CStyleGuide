@@ -322,5 +322,35 @@ paying attention only to those portions applicable to plain C.
 * Close braces should always be on their one line, aligned horizontally with
   their open statement.
 
+
 Markup Languages
 ----------------
+### All Languages ###
+Markup languages, by their nature, are largely self-documenting. Therefore, when
+writing in a markup language, it is permissible to be more lax when commenting
+than in other languages.
+
+### HTML ###
+Unless otherwise specified here, follow the guidelines of the
+[W3C HTML5 Syntax Recommendations](http://www.w3.org/TR/html5/syntax.html).
+
+#### Paragraphing ####
+In writing HTML, there is occasionally a tendency to write multiple tags on one
+line. This should be avoided, as it leads to difficulty in reading the source.
+Instead, place each open and close tag on its own line, with the contents of
+those tags indented between them.
+
+The one exception to this rule is for trivial tag contents, such as the text in
+an `href`, in which case it is permissible (even advisable) to place the
+contents directly between the tags on the same line.
+
+### CSS ###
+
+#### Braces ####
+When programming in CSS, follow the "end-of-line" opening brace style.
+* Opening braces should always be on the same line as their parent.
+* Closing braces should alaways be on their own line, aligned horizontally with
+  their open statement
+
+### Spaces ###
+A space should be placed after each colon, but *not* before the colon.
