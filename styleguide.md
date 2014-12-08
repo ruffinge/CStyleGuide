@@ -1,17 +1,13 @@
-General-Purpose Style Guide
-===========================
-
 Introduction
-------------
-In experience of writing programs and code, it has come to my attention that it
-is beneficial to have predetermined conventions of coding style. Furthermore, I
-have learned that these conventions must necessarily vary from one programming
-language to the next due to the widely varying uses and though processes behind
-each programming environment.
+============
+In my personal experience of writing programs and code, it has come to my
+attention that it is beneficial to have predetermined conventions of coding
+style. Furthermore, I have learned that these conventions must necessarily vary
+from one programming language to the next due to the widely varying uses and
+though processes behind each programming environment.
 
-Therefore, I have decided to write this personal style guide as a reference for
-myself, so that, in the future, I will have an easier time keeping track of
-which conventions to use when.
+Therefore, I have decided to write this general-purpose style guide as a
+reference on which conventions are most suitable under which circumstances.
 
 This guide is organized in a hierarchical structure, first by programming
 paradigm, then by programming language, and, finally, by feature. Any section of
@@ -20,8 +16,8 @@ and all are intended to inherit those instructions in the "Everywhere" section
 of this of this document.
 
 Everywhere
-----------
-### File Organization ###
+==========
+## File Organization ##
 Source code should be written so that no line exceeds eighty characters in
 length.
 
@@ -32,7 +28,7 @@ should also include a copyright notice and license header if applicable.
 File names should be clear and concise so that someone can tell the general
 purpose of the file without having to open and read it or its header block.
 
-### Commenting ###
+## Commenting ##
 Comments should be included where necessary to give a better understanding of
 code. When writing longer comments, follow Strunk & White's *The Elements of
 Style* for English grammar guidelines.
@@ -40,14 +36,14 @@ Style* for English grammar guidelines.
 When writing dates and times, use the ISO 8601 standard. That is, for dates,
 YYYY-MM-DD; for times, hh:mm:ss; and, for date-times, YYYY-MM-DDThh:mm:ss.
 
-### Indentation ###
+## Indentation ##
 There seems to be an ongoing war regarding indentation in programming. For the
 purposes of this style guide, we will require the use of hard tabs (an actual
 `\t` character). IDE's and text editors should be set to use a tab width of
 four, and alignment of things such as comments should be based on this
 assumption.
 
-#### Exceptions ####
+### Exceptions ###
 There are two exceptions to this rule.
 
 First, when formatting block comments, all text within the block should be
@@ -61,13 +57,13 @@ In both of these exceptions, when indenting using spaces, indent each level at
 four spaces past the last.
 
 Object-Oriented Programming
----------------------------
-### All languages ###
-#### Commenting ####
+===========================
+## All languages ##
+### Commenting ###
 Comments should be included that give detailed descriptions of all functions,
 classes, and instance variables.
 
-##### Documentation #####
+#### Documentation ####
 When possible, DocBlock-style comments should be provided for *every* class and
 method (public or private). DocBlock comments should be formatted using the
 `/** ... */` system, as illustrated in the example further down.
@@ -115,7 +111,7 @@ A blank line should be placed after each paragraph of explanation; between the
 explanation and author, date, and version tags; and between those tags and the
 param and return tags.
 
-###### Example ######
+##### Example #####
 
 ```java
 /**
@@ -129,24 +125,24 @@ param and return tags.
  */
 ```
 
-#### Naming ####
+### Naming ###
 In general, names should be concise, but long enough to understand immediately.
 
-##### Classes #####
+#### Classes ####
 Classes and interfaces should be titled in CamelCase, with a name that reflects
 the real-world object which the class is intended to represent.
 
-##### Variables #####
+#### Variables ####
 All variables should be named in headlessCamelCase.
 
-##### Constants #####
+#### Constants ####
 Constants (including enum entries) should be named in UPPER_CASE.
 
-#### Whitespace ####
+### Whitespace ###
 Whitespace helps tremendously to improve readability. The following are basic
 guidelines, but can be expanded on to further improve readability.
 
-##### Blank Lines #####
+#### Blank Lines ####
 One blank line should always be used in the following locations:
 
 * Between methods
@@ -154,7 +150,7 @@ One blank line should always be used in the following locations:
 * Before a block or single-line comment
 * Between logically separate sections of code within a method
 
-##### Blank Spaces #####
+#### Blank Spaces ####
 Blank spaces should be used in the following locations:
 
 * Between a keyword and a parenthesis. Note that a blanks space should *not* be
@@ -173,11 +169,11 @@ while (true) {
 * After each semicolon in a `for` loop (for example,
   `for (int i = 0; i < n; i++) {}`)
 
-#### Braces ####
+### Braces ###
 All loops, conditionals, and other such structures where braces can be
 "optional" *must* use braces, even if their contents is a single line.
 
-#### Error Handling ####
+### Error Handling ###
 There are multiple existing systems of error handling. For example, in
 traditional C, errors are passed via return values as integers. In some places,
 errors are passed as simple booleans (i.e., `false` means an error occurred).
@@ -197,26 +193,26 @@ not be caught and ignored in a private function. Rather, they should, ideally,
 make it as high as a static method (for example, in Java, `main()`), or the
 primary operating method of your program.
 
-### Java ###
+## Java ##
 Unless otherwise specified here, follow the guidelines of Oracle's
 [Java Coding Style](http://www.oracle.com/technetwork/java/codeconvtoc-136057.html).
 
-#### Braces ####
+### Braces ###
 * Opening braces should always be on the same line as their parent.
 * Close braces should always be on their one line, aligned horizontally with
   their open statement.
 
-#### File Contents ####
+### File Contents ###
 Each file should contain only one top-level class, interface, enum, etc. The
 file should be named identically to that top-level item, with the file extension
 `*.java`. For example, if a file contains `class HelloWorld`, it should be named
 `HelloWorld.java`.
 
-### PHP ###
+## PHP ##
 Unless otherwise specified here, follow the guidelines of the PHP Pear
 [Coding Standards](http://pear.php.net/manual/en/standards.php).
 
-#### Braces ####
+### Braces ###
 * Opening braces for classes and functions should always be on their own line,
   aligned on the column of the item they are for.
 * Opening braces for loops and conditionals should always be on the same line as
@@ -224,33 +220,33 @@ Unless otherwise specified here, follow the guidelines of the PHP Pear
 * Close braces should always be on their one line, aligned horizontally with
   their open statement.
 
-### JavaScript ###
+## JavaScript ##
 Unless otherwise specified here, follow the guidelines of the
 [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
 
-#### Braces ####
+### Braces ###
 * Opening braces should always be on the same line as their parent.
 * Close braces should always be on their one line, aligned horizontally with
   their open statement.
 
-### C++ ###
+## C++ ##
 Unless otherwise specified here, follow the guidelines of the
 [Google C++ Style Guide](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml).
 
-#### Braces ####
+### Braces ###
 * Opening braces should always be on their own line, aligned on the column of
   the item they are for.
 * Close braces should always be on their one line, aligned horizontally with
   their open statement.
 
 Functional Programming
-----------------------
-### All Languages ###
-#### Commenting ####
+======================
+## All Languages ##
+### Commenting ###
 Comments should be included that give detailed descriptions of all functions,
 classes, and instance variables.
 
-##### Documentation #####
+#### Documentation ####
 When possible, DocBlock-style comments should be provided for *every* class and
 method (public or private). DocBlock comments should be formatted using the
 `/** ... */` system, as illustrated in the example further down.
@@ -293,7 +289,7 @@ A blank line should be placed after each paragraph of explanation; between the
 explanation and author, date, and version tags; and between those tags and the
 param and return tags.
 
-###### Example ######
+##### Example #####
 
 ```c
 /**
@@ -311,12 +307,12 @@ param and return tags.
  */
 ```
 
-### C ###
+## C ##
 Unless otherwise specified here, follow the guidelines of the
 [Google C++ Style Guide](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml),
 paying attention only to those portions applicable to plain C.
 
-#### Braces ####
+### Braces ###
 * Opening braces should always be on their own line, aligned on the column of
   the item they are for.
 * Close braces should always be on their one line, aligned horizontally with
@@ -324,17 +320,17 @@ paying attention only to those portions applicable to plain C.
 
 
 Markup Languages
-----------------
-### All Languages ###
+================
+## All Languages ##
 Markup languages, by their nature, are largely self-documenting. Therefore, when
 writing in a markup language, it is permissible to be more lax when commenting
 than in other languages.
 
-### HTML ###
+## HTML ##
 Unless otherwise specified here, follow the guidelines of the
 [W3C HTML5 Syntax Recommendations](http://www.w3.org/TR/html5/syntax.html).
 
-#### Paragraphing ####
+### Paragraphing ###
 In writing HTML, there is occasionally a tendency to write multiple tags on one
 line. This should be avoided, as it leads to difficulty in reading the source.
 Instead, place each open and close tag on its own line, with the contents of
@@ -344,13 +340,17 @@ The one exception to this rule is for trivial tag contents, such as the text in
 an `href`, in which case it is permissible (even advisable) to place the
 contents directly between the tags on the same line.
 
-### CSS ###
+## CSS ##
 
-#### Braces ####
+### Braces ###
 When programming in CSS, follow the "end-of-line" opening brace style.
+
 * Opening braces should always be on the same line as their parent.
 * Closing braces should alaways be on their own line, aligned horizontally with
   their open statement
 
 ### Spaces ###
 A space should be placed after each colon, but *not* before the colon.
+
+### Documentation ###
+Document all styles using [KSS](https://github.com/kneath/kss).
