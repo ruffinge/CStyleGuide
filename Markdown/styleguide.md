@@ -1,5 +1,8 @@
 General-Purpose Style Guide
 ===========================
+By Ethan Ruffing
+
+Updated December 8, 2014
 
 Introduction
 ------------
