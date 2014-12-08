@@ -1,7 +1,3 @@
-# Ignore generated documents
-*.html
-*.pdf
-
 # Vim
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
