@@ -1,3 +1,3 @@
-[submodule "Markdown/css"]
-	path = Markdown/css
+[submodule "css"]
+	path = css
 	url = https://gist.github.com/6714393.git
