@@ -6,15 +6,14 @@ Updated December 8, 2014
 
 Introduction
 ------------
-In experience of writing programs and code, it has come to my attention that it
-is beneficial to have predetermined conventions of coding style. Furthermore, I
-have learned that these conventions must necessarily vary from one programming
-language to the next due to the widely varying uses and though processes behind
-each programming environment.
+In my personal experience of writing programs and code, it has come to my
+attention that it is beneficial to have predetermined conventions of coding
+style. Furthermore, I have learned that these conventions must necessarily vary
+from one programming language to the next due to the widely varying uses and
+though processes behind each programming environment.
 
-Therefore, I have decided to write this personal style guide as a reference for
-myself, so that, in the future, I will have an easier time keeping track of
-which conventions to use when.
+Therefore, I have decided to write this general-purpose style guide as a
+reference on which conventions are most suitable under which circumstances.
 
 This guide is organized in a hierarchical structure, first by programming
 paradigm, then by programming language, and, finally, by feature. Any section of
