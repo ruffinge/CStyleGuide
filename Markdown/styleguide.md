@@ -351,3 +351,6 @@ When programming in CSS, follow the "end-of-line" opening brace style.
 
 ### Spaces ###
 A space should be placed after each colon, but *not* before the colon.
+
+### Documentation ###
+Document all styles using [KSS](https://github.com/kneath/kss).
