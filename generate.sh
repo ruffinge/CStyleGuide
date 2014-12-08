@@ -8,4 +8,4 @@ AUTHOR="Ethan Ruffing"
 DATE="December 8, 2014"
 
 pandoc styleguide.md -s -S -o styleguide.pdf --chapters -M author="$AUTHOR" -M title="$TITLE" -M date="$DATE" --toc --toc-depth=2
-pandoc styleguide.md -s -S -o styleguide.html --chapters -M author="$AUTHOR" -M title="$TITLE" -M date="$DATE" --toc --toc-depth=2 -c github-pandoc.css
+pandoc styleguide.md -s -S -o styleguide.html --chapters -M author="$AUTHOR" -M title="$TITLE" -M date="$DATE" --toc --toc-depth=2 -c css/github-pandoc.css
