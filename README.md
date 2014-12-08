@@ -1,5 +1,5 @@
-A Programming Style Guide
-=========================
+General-Purpose Style Guide
+===========================
 Copyright &copy; 2014 by Ethan Ruffing
 
 This is intended to be a general-purpose programming style guide. The entire
