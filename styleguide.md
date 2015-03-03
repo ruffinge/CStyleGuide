@@ -51,6 +51,22 @@ YYYY-MM-DD; for times, hh:mm:ss; and, for date-times, YYYY-MM-DDThh:mm:ss.
 Comments should be included that give detailed descriptions of all functions,
 classes, and instance variables.
 
+## Program Documentation ##
+It is essential to provide a brief overview of your program. Such an overview
+should be placed in a file named `README.md`, and formatted using Markdown
+(a markup language designed to create nicely-formatted, but still easily parsed,
+plain-text files). This file should contain an overview of the program's
+purpose, its authors, and relavent copyright information. It should also include
+directions on where to find more extensive documentation, for both users and
+developers. However, detailed documentation on the program's functionality
+should *not* be included in this file.
+
+In addition, it is prudent to maintain a `CHANGELOG` (or, if preferred,
+`CHANGELOG.md`) file, in which a brief overview of the changes made between each
+release of the program are listed. Note that the changes listed here should be
+only the major differences between versions; all minor changes and modifications
+should be recorded using some form of version control, such as Git or SVN.
+
 ## Function Documentation ##
 DocBlock-style comments should be provided for *every* function. DocBlock
 comments should be formatted using the `/** ... */` system, as illustrated in
@@ -192,4 +208,5 @@ established way to pass errors in C is to return "error code" values as
 integers. In some places, errors are passed as simple booleans (i.e., `false`
 means an error occurred).
 
-It is prudent to devise and follow and error handling and checking system to use in all programs.
+It is prudent to devise and follow and error handling and checking system to use
+in all programs.
