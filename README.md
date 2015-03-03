@@ -17,3 +17,4 @@ To generate the documents, simply run the appropriate script: `generate.bat`
 By default, these scripts will generate an HTML version and a PDF version
 (using LaTeX). To skip the HTML version, use the argument `--no-html`.
 Similarly, to skip the PDF version, use the argument `--no-pdf`.
+
