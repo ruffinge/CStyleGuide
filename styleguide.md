@@ -130,7 +130,9 @@ param and return tags.
 Basic Formatting
 ================
 C source files should be written according the the Kernighan and Ritchie (K & R)
-style. Extensive documentation on this style can be found online.
+style. Furthermore, source files should be written according to the C11
+(ISO/IEC 9899:2011) standard. Extensive documentation on both of these can be
+found online.
 
 ## Naming ##
 In general, names should be concise, but long enough to understand immediately.
