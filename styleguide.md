@@ -9,7 +9,7 @@ A consistent style and detailed documentation will allow colleagues and future
 programmers to easily understand and use new source code.
 
 This style guide is intended to provide a unifying basis for programming in the
-C programming languange, and to provide a standard for documenting the programs
+C programming language, and to provide a standard for documenting the programs
 created.
 
 File & Program Organization
@@ -148,22 +148,15 @@ guidelines, but can be expanded on to further improve readability.
 ### Indentation ###
 There seems to be an ongoing war regarding indentation in programming. For the
 purposes of this style guide, we will require the use of hard tabs (an actual
-`\t` character). IDE's and text editors should be set to use a tab width of
-four, and alignment of things such as comments should be based on this
-assumption.
+`\t` character). IDEs and text editors should be set to use a tab width of four,
+and alignment of items such as comments should be based on this assumption.
 
-#### Exceptions ####
-There are two exceptions to this rule.
+#### Exception ####
+There is one exception to this rule (which was alluded to previously).
 
-First, when formatting block comments, all text within the block should be
+When formatting block comments, all text within the block should be
 aligned using spaces in order to guarantee readable documentation everywhere.
 (NOTE, however, that the comment block itself should be indented using tabs.)
-
-Second, in languages that are whitespace sensitive, such as Python, use spaces
-for all indentation.
-
-In both of these exceptions, when indenting using spaces, indent each level at
-four spaces past the last.
 
 ### Blank Lines ###
 One blank line should always be used in the following locations:
