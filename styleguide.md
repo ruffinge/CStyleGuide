@@ -9,7 +9,7 @@ A consistent style and detailed documentation will allow colleagues and future
 programmers to easily understand and use new source code.
 
 This style guide is intended to provide a unifying basis for programming in the
-C programming languange, and to provide a standard for documenting the programs
+C programming language, and to provide a standard for documenting the programs
 created.
 
 File & Program Organization
@@ -50,6 +50,22 @@ YYYY-MM-DD; for times, hh:mm:ss; and, for date-times, YYYY-MM-DDThh:mm:ss.
 
 Comments should be included that give detailed descriptions of all functions,
 classes, and instance variables.
+
+## Program Documentation ##
+It is essential to provide a brief overview of your program. Such an overview
+should be placed in a file named `README.md`, and formatted using Markdown
+(a markup language designed to create nicely-formatted, but still easily parsed,
+plain-text files). This file should contain an overview of the program's
+purpose, its authors, and relavent copyright information. It should also include
+directions on where to find more extensive documentation, for both users and
+developers. However, detailed documentation on the program's functionality
+should *not* be included in this file.
+
+In addition, it is prudent to maintain a `CHANGELOG` (or, if preferred,
+`CHANGELOG.md`) file, in which a brief overview of the changes made between each
+release of the program are listed. Note that the changes listed here should be
+only the major differences between versions; all minor changes and modifications
+should be recorded using some form of version control, such as Git or SVN.
 
 ## Function Documentation ##
 DocBlock-style comments should be provided for *every* function. DocBlock
@@ -132,22 +148,15 @@ guidelines, but can be expanded on to further improve readability.
 ### Indentation ###
 There seems to be an ongoing war regarding indentation in programming. For the
 purposes of this style guide, we will require the use of hard tabs (an actual
-`\t` character). IDE's and text editors should be set to use a tab width of
-four, and alignment of things such as comments should be based on this
-assumption.
+`\t` character). IDEs and text editors should be set to use a tab width of four,
+and alignment of items such as comments should be based on this assumption.
 
-#### Exceptions ####
-There are two exceptions to this rule.
+#### Exception ####
+There is one exception to this rule (which was alluded to previously).
 
-First, when formatting block comments, all text within the block should be
+When formatting block comments, all text within the block should be
 aligned using spaces in order to guarantee readable documentation everywhere.
 (NOTE, however, that the comment block itself should be indented using tabs.)
-
-Second, in languages that are whitespace sensitive, such as Python, use spaces
-for all indentation.
-
-In both of these exceptions, when indenting using spaces, indent each level at
-four spaces past the last.
 
 ### Blank Lines ###
 One blank line should always be used in the following locations:
@@ -192,4 +201,5 @@ established way to pass errors in C is to return "error code" values as
 integers. In some places, errors are passed as simple booleans (i.e., `false`
 means an error occurred).
 
-It is prudent to devise and follow and error handling and checking system to use in all programs.
+It is prudent to devise and follow and error handling and checking system to use
+in all programs.
