@@ -80,9 +80,10 @@ what tags are supported, see the
 section of the
 [Doxygen Manual](http://www.stack.nl/~dimitri/doxygen/manual/index.html).
 
-Author and date (`@since`) should *always* be given for a file DocBlock. If using
-version numbering for the project, the version tag should also *always* appear
-in the class DocBlock.
+Author and date (`@since`) should *always* be given for a file DocBlock. If
+using version numbering for the project, the version tag (showing the current
+version number, not that at which the file was introduced) should also *always*
+appear in the file DocBlock.
 
 At a minimum, functions should *always* have the date (since) tag. If multiple
 authors have contributed to the same class, they should also include the author
@@ -205,4 +206,3 @@ means an error occurred).
 
 It is prudent to devise and follow and error handling and checking system to use
 in all programs.
-
