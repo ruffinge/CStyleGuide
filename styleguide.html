@@ -32,7 +32,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <div id="header">
 <h1 class="title">C Style Guide</h1>
 <h2 class="author">Ethan Ruffing</h2>
-<h3 class="date">March 3, 2015</h3>
+<h3 class="date">March 5, 2015</h3>
 </div>
 <div id="TOC">
 <ul>
@@ -78,12 +78,12 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <h2 id="function-documentation"><a href="#function-documentation">Function Documentation</a></h2>
 <p>DocBlock-style comments should be provided for <em>every</em> function. DocBlock comments should be formatted using the <code>/** ... */</code> system, as illustrated in the example further down.</p>
 <p>The most commonly used DocBlock interpreter for C documentation is <a href="http://www.stack.nl/~dimitri/doxygen/">Doxgen</a>. It supports export into a multitude of formats and supports a large number of tags. For a reference of what tags are supported, see the <a href="http://www.stack.nl/~dimitri/doxygen/manual/commands.html">Special Commands</a> section of the <a href="http://www.stack.nl/~dimitri/doxygen/manual/index.html">Doxygen Manual</a>.</p>
-<p>Author and date (<code>@since</code>) should <em>always</em> be given for a file DocBlock. If using version numbering for the project, the version tag should also <em>always</em> appear in the class DocBlock.</p>
-<p>At a minimum, functions should <em>always</em> have the date (since) tag. If multiple authors have contributed to the same class, they should also include the author tag. (If not given, the author is to be assumed to be the same as the class author.)</p>
-<p>Functions should also have <code>@param</code> and <code>@return</code> tags where applicable. Any method other than a simple getter/setter (one which does not operate on the variable, but merely sets or returns its value) must have a description of its functionality. When applicable to the language, parameter tags should also specify the parameter direction (<code>[in]</code> or <code>[out]</code>). The description portion of these tags should be located on the next line (after the tag and variable name) and indented one level past the tag itself.</p>
-<p>Global variables should have a DocBlock comment to explain their purpose, and macros should be described in a block somewhere near the beginning of the file.</p>
+<p>Author and date (or <code>@since</code>) should <em>always</em> be given for a file DocBlock. If using version numbering for the project, the version tag (showing the current version number, not that at which the file was introduced) should also <em>always</em> appear in the file DocBlock.</p>
+<p>At a minimum, functions should <em>always</em> have the <code>@date</code> (or <code>@since</code>) tags. If multiple authors have contributed to the same file, then each function’s block <em>must</em> include an <code>@author</code> tag, as well. (If not given, the author is to be assumed to be the same as the file author.)</p>
+<p>Functions should also have <code>@param</code> and <code>@return</code> tags where applicable. Parameter tags should specify the parameter direction (<code>[in]</code> or <code>[out]</code>, as seen in the example below). The description portion of these tags should be located on the next line (after the tag and variable name) and indented one level past the tag itself.</p>
+<p>If absolutely necessary to use, global variables should have a DocBlock comment to explain their purpose. Macros should be described in a block somewhere near the beginning of the file (though not in the file’s description/header block).</p>
 <p>Description text should be written in sentences and be punctuated with a period. Variable and <code>@param</code>/<code>@return</code> value descriptions, however, should be kept brief and not written as full sentences, unless absolutely necessary. (The first letter of these descriptions, though, should still be capitalized.)</p>
-<p>A blank line should be placed after each paragraph of explanation; between the explanation and author, date, and version tags; and between those tags and the param and return tags.</p>
+<p>A blank line should be placed after each paragraph of explanation; between the explanation and author, date, and version tags; and between those tags and the <code>@param</code> and <code>@return</code> tags. (Note, however, that there should <em>not</em> be a blank line between <code>@param</code> and <code>@return</code> tags.)</p>
 <h3 id="example"><a href="#example">Example</a></h3>
 <pre class="sourceCode c"><code class="sourceCode c"><span class="co">/**</span>
 <span class="co"> * This is an explanation of a function.</span>
@@ -97,15 +97,20 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <span class="co"> *     A brief description of the output outName</span>
 <span class="co"> * </span><span class="kw">@return</span>
 <span class="co"> *     A brief description of the function&#39;s return value</span>
-<span class="co"> */</span></code></pre>
+<span class="co"> */</span>
+<span class="dt">char</span> doSomething(<span class="dt">int</span> varName, <span class="dt">int</span> *outName) {
+    *outName = varName + <span class="dv">1</span>;
+    <span class="kw">return</span> varName % <span class="dv">2</span> == <span class="dv">0</span> ? &#39;y&#39; : &#39;n&#39;;
+}</code></pre>
 <h1 id="basic-formatting"><a href="#basic-formatting">Basic Formatting</a></h1>
 <p>C source files should be written according the the Kernighan and Ritchie (K &amp; R) style. Furthermore, source files should be written according to the C11 (ISO/IEC 9899:2011) standard. Extensive documentation on both of these can be found online.</p>
 <h2 id="naming"><a href="#naming">Naming</a></h2>
 <p>In general, names should be concise, but long enough to understand immediately.</p>
-<h3 id="variables"><a href="#variables">Variables</a></h3>
-<p>All variables should be named in headlessCamelCase.</p>
-<h3 id="constants"><a href="#constants">Constants</a></h3>
-<p>Constants (including enum entries) should be named in UPPER_CASE.</p>
+<p>The following rules are non-negotiable with regards to the case used for names.</p>
+<h3 id="variables-and-functions"><a href="#variables-and-functions">Variables and Functions</a></h3>
+<p>All variables and functions should be named in <code>headlessCamelCase</code>.</p>
+<h3 id="constants-and-macros"><a href="#constants-and-macros">Constants and Macros</a></h3>
+<p>Constants and pre-processor macros should be named in <code>SCREAMING_SNAKE_CASE</code>.</p>
 <h2 id="whitespace"><a href="#whitespace">Whitespace</a></h2>
 <p>Whitespace helps tremendously to improve readability. The following are basic guidelines, but can be expanded on to further improve readability.</p>
 <h3 id="indentation"><a href="#indentation">Indentation</a></h3>
