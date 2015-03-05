@@ -80,25 +80,25 @@ what tags are supported, see the
 section of the
 [Doxygen Manual](http://www.stack.nl/~dimitri/doxygen/manual/index.html).
 
-Author and date (`@since`) should *always* be given for a file DocBlock. If using
-version numbering for the project, the version tag should also *always* appear
-in the class DocBlock.
+Author and date (or `@since`) should *always* be given for a file DocBlock. If
+using version numbering for the project, the version tag (showing the current
+version number, not that at which the file was introduced) should also *always*
+appear in the file DocBlock.
 
-At a minimum, functions should *always* have the date (since) tag. If multiple
-authors have contributed to the same class, they should also include the author
-tag. (If not given, the author is to be assumed to be the same as the class
-author.)
+At a minimum, functions should *always* have the `@date` (or `@since`) tags. If
+multiple authors have contributed to the same file, then each function's block
+*must* include an `@author` tag, as well. (If not given, the author is to be
+assumed to be the same as the file author.)
 
-Functions should also have `@param` and `@return` tags where applicable. Any
-method other than a simple getter/setter (one which does not operate on the
-variable, but merely sets or returns its value) must have a description of its
-functionality. When applicable to the language, parameter tags should also
-specify the parameter direction (`[in]` or `[out]`). The description portion of
-these tags should be located on the next line (after the tag and variable name)
-and indented one level past the tag itself.
+Functions should also have `@param` and `@return` tags where applicable.
+Parameter tags should specify the parameter direction (`[in]` or `[out]`, as
+seen in the example below). The description portion of these tags should be
+located on the next line (after the tag and variable name) and indented one
+level past the tag itself.
 
-Global variables should have a DocBlock comment to explain their purpose, and
-macros should be described in a block somewhere near the beginning of the file.
+If absolutely necessary to use, global variables should have a DocBlock comment
+to explain their purpose. Macros should be described in a block somewhere near
+the beginning of the file (though not in the file's description/header block).
 
 Description text should be written in sentences and be punctuated with a period.
 Variable and `@param`/`@return` value descriptions, however, should be kept
@@ -107,7 +107,8 @@ letter of these descriptions, though, should still be capitalized.)
 
 A blank line should be placed after each paragraph of explanation; between the
 explanation and author, date, and version tags; and between those tags and the
-param and return tags.
+`@param` and `@return` tags. (Note, however, that there should *not* be a blank
+line between `@param` and `@return` tags.)
 
 ### Example ###
 
@@ -125,6 +126,10 @@ param and return tags.
  * @return
  *     A brief description of the function's return value
  */
+char doSomething(int varName, int *outName) {
+    *outName = varName + 1;
+    return varName % 2 == 0 ? 'y' : 'n';
+}
 ```
 
 Basic Formatting
@@ -137,11 +142,13 @@ found online.
 ## Naming ##
 In general, names should be concise, but long enough to understand immediately.
 
-### Variables ###
-All variables should be named in headlessCamelCase.
+The following rules are non-negotiable with regards to the case used for names.
 
-### Constants ###
-Constants (including enum entries) should be named in UPPER_CASE.
+### Variables and Functions ###
+All variables and functions should be named in `headlessCamelCase`.
+
+### Constants and Macros ###
+Constants and pre-processor macros should be named in `SCREAMING_SNAKE_CASE`.
 
 ## Whitespace ##
 Whitespace helps tremendously to improve readability. The following are basic
@@ -205,4 +212,3 @@ means an error occurred).
 
 It is prudent to devise and follow and error handling and checking system to use
 in all programs.
-
