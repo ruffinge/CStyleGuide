@@ -80,23 +80,21 @@ what tags are supported, see the
 section of the
 [Doxygen Manual](http://www.stack.nl/~dimitri/doxygen/manual/index.html).
 
-Author and date (`@since`) should *always* be given for a file DocBlock. If
+Author and date (or `@since`) should *always* be given for a file DocBlock. If
 using version numbering for the project, the version tag (showing the current
 version number, not that at which the file was introduced) should also *always*
 appear in the file DocBlock.
 
-At a minimum, functions should *always* have the date (since) tag. If multiple
-authors have contributed to the same class, they should also include the author
-tag. (If not given, the author is to be assumed to be the same as the class
-author.)
+At a minimum, functions should *always* have the `@date` (or `@since`) tags. If
+multiple authors have contributed to the same file, then each function's block
+*must* include an `@author` tag, as well. (If not given, the author is to be
+assumed to be the same as the file author.)
 
-Functions should also have `@param` and `@return` tags where applicable. Any
-method other than a simple getter/setter (one which does not operate on the
-variable, but merely sets or returns its value) must have a description of its
-functionality. When applicable to the language, parameter tags should also
-specify the parameter direction (`[in]` or `[out]`). The description portion of
-these tags should be located on the next line (after the tag and variable name)
-and indented one level past the tag itself.
+Functions should also have `@param` and `@return` tags where applicable.
+Parameter tags should specify the parameter direction (`[in]` or `[out]`, as
+seen in the example below). The description portion of these tags should be
+located on the next line (after the tag and variable name) and indented one
+level past the tag itself.
 
 Global variables should have a DocBlock comment to explain their purpose, and
 macros should be described in a block somewhere near the beginning of the file.
@@ -126,6 +124,10 @@ param and return tags.
  * @return
  *     A brief description of the function's return value
  */
+char doSomething(int varName, int *outName) {
+    *outName = varName + 1;
+    return varName % 2 == 0 ? 'y' : 'n';
+}
 ```
 
 Basic Formatting
