@@ -96,8 +96,9 @@ seen in the example below). The description portion of these tags should be
 located on the next line (after the tag and variable name) and indented one
 level past the tag itself.
 
-Global variables should have a DocBlock comment to explain their purpose, and
-macros should be described in a block somewhere near the beginning of the file.
+If absolutely necessary to use, global variables should have a DocBlock comment
+to explain their purpose. Macros should be described in a block somewhere near
+the beginning of the file (though not in the file's description/header block).
 
 Description text should be written in sentences and be punctuated with a period.
 Variable and `@param`/`@return` value descriptions, however, should be kept
@@ -106,7 +107,8 @@ letter of these descriptions, though, should still be capitalized.)
 
 A blank line should be placed after each paragraph of explanation; between the
 explanation and author, date, and version tags; and between those tags and the
-param and return tags.
+`@param` and `@return` tags. (Note, however, that there should *not* be a blank
+line between `@param` and `@return` tags.)
 
 ### Example ###
 
