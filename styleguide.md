@@ -142,11 +142,13 @@ found online.
 ## Naming ##
 In general, names should be concise, but long enough to understand immediately.
 
-### Variables ###
-All variables should be named in headlessCamelCase.
+The following rules are non-negotiable with regards to the case used for names.
 
-### Constants ###
-Constants (including enum entries) should be named in UPPER_CASE.
+### Variables and Functions ###
+All variables and functions should be named in `headlessCamelCase`.
+
+### Constants and Macros ###
+Constants and pre-processor macros should be named in `SCREAMING_SNAKE_CASE`.
 
 ## Whitespace ##
 Whitespace helps tremendously to improve readability. The following are basic
