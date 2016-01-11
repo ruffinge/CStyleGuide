@@ -1,5 +1,8 @@
 CHANGELOG
 =========
+## 0.4.3 ##
+* Added output to tracked files for publishing
+
 ## 0.4.2 ##
 * Fixed incorrect copyright years in `README.md` and in main source file
 
