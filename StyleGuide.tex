@@ -1,11 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% This is a template for use in creating laboratory reports. The necessary fields
-% to edit have been marked with clear commenting throughout the template.
+% This is the source for a C Style Guide by Ethan Ruffing.
 %
-% Template by Ethan Ruffing.
+% Copyright 2015-2016 by Ethan Ruffing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[11pt]{article}
+\documentclass[11pt]{book}
 \usepackage{amssymb,amsmath}
 \usepackage{caption}
 \usepackage{appendix}
@@ -23,7 +22,7 @@
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 % Use the following to configure the page geometry
-\usepackage[letterpaper, portrait, margin=1in]{geometry}
+\usepackage[letterpaper, portrait]{geometry}
 
 % The following line changes from indenting paragraphs to placing blank lines
 % between them
@@ -110,34 +109,39 @@
     linkcolor=black,
     urlcolor=black
 }
-\def\sectionautorefname{Section}
+\def\chapterautorefname{Section}
 
 \usepackage{url}
 \renewcommand{\theenumi}{\alph{enumi}} \renewcommand{\theenumii}{\arabic{enumii}}
 	\renewcommand{\labelenumii}{\theenumii.}
 \usepackage{adjustbox}
-\usepackage{fancyhdr}
-\fancypagestyle{norule}{ %
-    \renewcommand{\headrulewidth}{0pt}
-    \renewcommand{\footrulewidth}{0pt}
+
+\def\secondpage{\clearpage\null\vfill
+	\pagestyle{empty}
+	\begin{minipage}[b]{0.9\textwidth}
+	\footnotesize\raggedright
+	\setlength{\parskip}{0.5\baselineskip}
+	Copyright \copyright 2015--\the\year\ by Ethan Ruffing\par
+	All Rights Reserved. 
+	\end{minipage}
+	\vspace*{2\baselineskip}
+	\cleardoublepage
 }
+
+\makeatletter
+\g@addto@macro{\maketitle}{\secondpage}
+\makeatother
+
 
 % The following section makes everything get numbered by section. Comment out to
 % return to normal numbering.
 \usepackage{chngcntr}
-\counterwithin{equation}{subsection}
-\counterwithin{figure}{subsection}
-\counterwithin{table}{subsection}
-
-
-\fancyhf{}
-\pagestyle{headings}
-\pagestyle{norule}
-
-% Define headers
-\fancyhead[LO]{\textsc{C Style Guide}}
-\fancyhead[RO]{\thepage}
-
+\AtBeginDocument{
+	\counterwithin{equation}{chapter}
+	\counterwithin{figure}{chapter}
+	\counterwithin{table}{chapter}
+	\counterwithin{lstlisting}{chapter}
+}
 
 \title{C Style Guide}
 \date{January 11, 2016}
@@ -150,7 +154,6 @@
 	\maketitle
 	\thispagestyle{empty}
 \end{titlepage}
-
 \pagenumbering{roman} % Number pages i, ii, ...
 
 % Generate table of contents
@@ -159,7 +162,7 @@
 \newpage
 \pagenumbering{arabic} % Number pages 1, 2, ...
 
-\section{Introduction}\label{sec:introduction}
+\chapter{Introduction}\label{ch:introduction}
 When programming, it is essential for all programmers on a project to follow a
 common style. Doing so ensures consistency and productivity, allowing for a
 final product which is better functioning and more appealing to the client.
@@ -170,9 +173,9 @@ This style guide is intended to provide a unifying basis for programming in the
 C programming language, and to provide a standard for documenting the programs
 created.
 
-\section{File \& Program Organization}\label{sec:file-program-organization}
+\chapter{File \& Program Organization}\label{ch:file-program-organization}
 
-\subsection{File Format}\label{subsec:file-format}
+\section{File Format}\label{sec:file-format}
 
 Source code should be written so that no line exceeds eighty characters
 in length.
@@ -186,7 +189,7 @@ File names should be clear and concise so that someone can tell the
 general purpose of the file without having to open and read it or its
 header block.
 
-\subsection{File Structure}\label{file-structure}
+\section{File Structure}\label{file-structure}
 
 Function \emph{declarations} should always be located within a header
 (\texttt{*.h}) file, while function \emph{definitions} should be located
@@ -195,15 +198,15 @@ the function in only one of these locations, it is best to place it in
 the header file, as the header file is intended to contain a high-level
 overview of each function.
 
-\subsection{Program Structure}\label{program-structure}
+\section{Program Structure}\label{program-structure}
 
 Every effort should be made to avoid the use of global variables.
 Instead, pre-processor macros should be used for constants, and
 variables should be passed and returned between functions.
 
-\section{Commenting \& Documentation}\label{commenting-documentation}
+\chapter{Commenting \& Documentation}\label{commenting-documentation}
 
-\subsection{Comments}\label{comments}
+\section{Comments}\label{comments}
 
 Comments should be included where necessary to give a better
 understanding of code. When writing longer comments, follow Strunk \&
@@ -216,7 +219,7 @@ YYYY-MM-DDThh:mm:ss.
 Comments should be included that give detailed descriptions of all
 functions, classes, and instance variables.
 
-\subsection{Program Documentation}\label{program-documentation}
+\section{Program Documentation}\label{program-documentation}
 
 It is essential to provide a brief overview of your program. Such an
 overview should be placed in a file named \texttt{README.md}, and
@@ -235,7 +238,7 @@ the changes listed here should be only the major differences between
 versions; all minor changes and modifications should be recorded using
 some form of version control, such as Git or SVN.
 
-\subsection{Function Documentation}\label{function-documentation}
+\section{Function Documentation}\label{function-documentation}
 
 DocBlock-style comments should be provided for \emph{every} function.
 DocBlock comments should be formatted using the \texttt{/**\ ...\ */}
@@ -305,14 +308,14 @@ char doSomething(int varName, int *outName) {
 }
 \end{code}
 
-\section{Basic Formatting}\label{basic-formatting}
+\chapter{Basic Formatting}\label{basic-formatting}
 
 C source files should be written according the the Kernighan and Ritchie
 (K \& R) style. Furthermore, source files should be written according to
 the C11 (ISO/IEC 9899:2011) standard. Extensive documentation on both of
 these can be found online.
 
-\subsection{Naming}\label{naming}
+\section{Naming}\label{naming}
 
 In general, names should be concise, but long enough to understand
 immediately.
@@ -320,22 +323,22 @@ immediately.
 The following rules are non-negotiable with regards to the case used for
 names.
 
-\subsubsection{Variables and Functions}\label{variables-and-functions}
+\subsection{Variables and Functions}\label{variables-and-functions}
 
 All variables and functions should be named in
 \texttt{headlessCamelCase}.
 
-\subsubsection{Constants and Macros}\label{constants-and-macros}
+\subsection{Constants and Macros}\label{constants-and-macros}
 
 Constants and pre-processor macros should be named in
 \texttt{SCREAMING\_SNAKE\_CASE}.
 
-\subsection{Whitespace}\label{whitespace}
+\section{Whitespace}\label{whitespace}
 
 Whitespace helps tremendously to improve readability. The following are
 basic guidelines, but can be expanded on to further improve readability.
 
-\subsubsection{Indentation}\label{indentation}
+\subsection{Indentation}\label{indentation}
 
 There seems to be an ongoing war regarding indentation in programming.
 For the purposes of this style guide, we will require the use of hard
@@ -343,49 +346,38 @@ tabs (an actual \texttt{\textbackslash{}t} character). IDEs and text
 editors should be set to use a tab width of four, and alignment of items
 such as comments should be based on this assumption.
 
-\paragraph{Exception}\label{exception}
-
-There is one exception to this rule (which was alluded to previously).
-
+There is one exception to this rule (which was alluded to previously):
 When formatting block comments, all text within the block should be
 aligned using spaces in order to guarantee readable documentation
 everywhere. (NOTE, however, that the comment block itself should be
 indented using tabs.)
 
-\subsubsection{Blank Lines}\label{blank-lines}
+\subsection{Blank Lines}\label{blank-lines}
 
 One blank line should always be used in the following locations:
 
 \begin{itemize}
 \item
-  Between methods
+  Between functions
 \item
-  Between a local variable in a method and its first statement
+  Between a local variable in a function and its first statement
 \item
   Before a block or single-line comment
 \item
-  Between logically separate sections of code within a method
+  Between logically separate sections of code within a function
 \end{itemize}
 
-\subsubsection{Blank Spaces}\label{blank-spaces}
+\subsection{Blank Spaces}\label{blank-spaces}
 
-Blank spaces should be used in the following locations:
+Blank spaces should be used in the following locations in order to enhance
+readability (an example is shown in \autoref{lst:spacing-example}):
 
 \begin{itemize}
 \item
-  Between a keyword and a parenthesis. Note that a blanks space should
-  \emph{not} be used between a method and its opening parenthesis. Also,
+  Between a keyword and a parenthesis. Note that a blank space should
+  \emph{not} be used between a function and its opening parenthesis. Also,
   there should not be any blank space following an opening parenthesis
-  or preceding a closing parenthesis. An example of this is shown in
-  \autoref{lst:spacing-example}.
-
-\begin{code}[caption=Spacing example, label=lst:spacing-example]
-while (true) {
-	printf("test");
-	...
-}
-\end{code}
-
+  or preceding a closing parenthesis.
 \item
   Before an opening brace (see above example)
 \item
@@ -393,11 +385,20 @@ while (true) {
 \item
   \emph{Not} between unary operators and their operands
 \item
-  After each semicolon in a \texttt{for} loop (for example,
-  \texttt{for\ (int\ i\ =\ 0;\ i\ \textless{}\ n;\ i++)\ \{\}})
+  After each semicolon in a \texttt{for} loop
 \end{itemize}
 
-\subsubsection{Braces}\label{braces}
+\begin{code}[caption=Spacing example, label=lst:spacing-example]
+void example(int a) {
+	int i, b = 2, c;
+	for (i = 0; i < n; i++) {
+		c = a + b;
+		c = a ? b - 1 : b + 1;
+	}
+}
+\end{code}
+
+\subsection{Braces}\label{braces}
 
 \begin{itemize}
 \item
@@ -412,12 +413,12 @@ while (true) {
   with their open statement.
 \end{itemize}
 
-\section{Error Handling}\label{error-handling}
+\chapter{Error Handling}\label{error-handling}
 
 There are multiple existing systems of error handling. For example, one
 established way to pass errors in C is to return ``error code'' values
-as integers. In some places, errors are passed as simple booleans (i.e.,
-\texttt{false} means an error occurred).
+as integers. When using this function, a \texttt{0} is considered a successful
+return, and any other value is considered an error.
 
 It is prudent to devise and follow and error handling and checking
 system to use in all programs.
