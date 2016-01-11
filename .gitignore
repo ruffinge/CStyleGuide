@@ -92,3 +92,4 @@ tramp
 *.out
 *.synctex.gz
 *.toc
+!StyleGuide.pdf
