@@ -239,7 +239,7 @@ some form of version control, such as Git or SVN.
 
 DocBlock-style comments should be provided for \emph{every} function.
 DocBlock comments should be formatted using the \texttt{/**\ ...\ */}
-system, as illustrated in the example further down.
+system, as illustrated in \autoref{lst:doxygen-example}.
 
 The most commonly used DocBlock interpreter for C documentation is
 \href{http://www.stack.nl/~dimitri/doxygen/}{Doxgen}. It supports export
@@ -285,7 +285,7 @@ those tags and the \texttt{@param} and \texttt{@return} tags. (Note,
 however, that there should \emph{not} be a blank line between
 \texttt{@param} and \texttt{@return} tags.)
 
-\begin{code}[caption=Example of Doxygen comments.]
+\begin{code}[caption=Example of Doxygen comments.,label=lst:doxygen-example]
 /**
  * This is an explanation of a function.
  *
@@ -376,9 +376,10 @@ Blank spaces should be used in the following locations:
   Between a keyword and a parenthesis. Note that a blanks space should
   \emph{not} be used between a method and its opening parenthesis. Also,
   there should not be any blank space following an opening parenthesis
-  or preceding a closing parenthesis. Example:
+  or preceding a closing parenthesis. An example of this is shown in
+  \autoref{lst:spacing-example}.
 
-\begin{code}
+\begin{code}[caption=Spacing example, label=lst:spacing-example]
 while (true) {
 	printf("test");
 	...
