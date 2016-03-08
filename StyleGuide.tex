@@ -13,6 +13,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{enumitem}
+\usepackage{cclicenses}
 
 % Comment the following line to use Computer Modern typeface, uncomment to use
 % Times and Courier
@@ -118,13 +119,17 @@
 
 \def\secondpage{\clearpage\null\vfill
 	\pagestyle{empty}
-	\begin{minipage}[b]{0.9\textwidth}
-	\footnotesize\raggedright
-	\setlength{\parskip}{0.5\baselineskip}
-	Copyright \copyright 2014--\the\year\ by Ethan Ruffing\par
-	All Rights Reserved. 
-	\end{minipage}
-	\vspace*{2\baselineskip}
+	
+	\begin{figure}[H]
+	\includegraphics[scale=1]{by-nc-nd.eps}
+	\end{figure}
+	Copyright \copyright 2014--\the\year\ by Ethan Ruffing.\par
+	
+	This work is licensed under the Creative Commons
+	Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a
+	copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+	\vspace*{4\baselineskip}
 	\cleardoublepage
 }
 
@@ -144,7 +149,7 @@
 }
 
 \title{C Style Guide}
-\date{January 11, 2016}
+\date{\today}
 \author{Ethan Ruffing}
 
 \begin{document}
