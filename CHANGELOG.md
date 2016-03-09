@@ -1,5 +1,10 @@
 CHANGELOG
 =========
+## 0.5.0 ##
+* Added licensing under the Creative Commons
+  Attribution-NonCommercial-NoDerivatives 4.0 International License
+* Modified source to be split in separate files.
+
 ## 0.4.3 ##
 * Added output to tracked files for publishing
 
