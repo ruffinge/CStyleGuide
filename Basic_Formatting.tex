@@ -1,0 +1,110 @@
+\documentclass[StyleGuide.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Basic Formatting}\label{basic-formatting}
+
+C source files should be written according the the Kernighan and Ritchie
+(K \& R) style. Furthermore, source files should be written according to
+the C11 (ISO/IEC 9899:2011) standard. Extensive documentation on both of
+these can be found online.
+
+\section{Naming}\label{naming}
+
+In general, names should be concise, but long enough to understand
+immediately.
+
+The following rules are non-negotiable with regards to the case used for
+names.
+
+\subsection{Variables and Functions}\label{variables-and-functions}
+
+All variables and functions should be named in
+\texttt{headlessCamelCase}.
+
+\subsection{Constants and Macros}\label{constants-and-macros}
+
+Constants and pre-processor macros should be named in
+\texttt{SCREAMING\_SNAKE\_CASE}.
+
+\section{Whitespace}\label{whitespace}
+
+Whitespace helps tremendously to improve readability. The following are
+basic guidelines, but can be expanded on to further improve readability.
+
+\subsection{Indentation}\label{indentation}
+
+There seems to be an ongoing war regarding indentation in programming.
+For the purposes of this style guide, we will require the use of hard
+tabs (an actual \texttt{\textbackslash{}t} character). IDEs and text
+editors should be set to use a tab width of four, and alignment of items
+such as comments should be based on this assumption.
+
+There is one exception to this rule (which was alluded to previously):
+When formatting block comments, all text within the block should be
+aligned using spaces in order to guarantee readable documentation
+everywhere. (NOTE, however, that the comment block itself should be
+indented using tabs.)
+
+\subsection{Blank Lines}\label{blank-lines}
+
+One blank line should always be used in the following locations:
+
+\begin{itemize}
+\item
+  Between functions
+\item
+  Between a local variable in a function and its first statement
+\item
+  Before a block or single-line comment
+\item
+  Between logically separate sections of code within a function
+\end{itemize}
+
+\subsection{Blank Spaces}\label{blank-spaces}
+
+Blank spaces should be used in the following locations in order to enhance
+readability (an example is shown in \autoref{lst:spacing-example}):
+
+\begin{itemize}
+\item
+  Between a keyword and a parenthesis. Note that a blank space should
+  \emph{not} be used between a function and its opening parenthesis. Also,
+  there should not be any blank space following an opening parenthesis
+  or preceding a closing parenthesis.
+\item
+  Before an opening brace (see above example)
+\item
+  Between binary and ternary operators and their operands
+\item
+  \emph{Not} between unary operators and their operands
+\item
+  After each semicolon in a \texttt{for} loop
+\end{itemize}
+
+\begin{code}[caption=Spacing example, label=lst:spacing-example]
+void example(int a) {
+	int i, b = 2, c;
+	for (i = 0; i < n; i++) {
+		c = a + b;
+		c = a ? b - 1 : b + 1;
+	}
+}
+\end{code}
+
+\subsection{Braces}\label{braces}
+
+\begin{itemize}
+\item
+  All loops, conditionals, and other such structures where braces are
+  functionally ``optional'' \emph{must} use braces, even if their
+  contents is a single line.
+\item
+  Opening braces should always be on their own line, aligned on the
+  column of the item they are for.
+\item
+  Close braces should always be on their one line, aligned horizontally
+  with their open statement.
+\end{itemize}
+
+\end{document}
