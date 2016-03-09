@@ -1,0 +1,36 @@
+\documentclass[StyleGuide.tex]{subfiles}
+
+\begin{document}
+
+\chapter{File \& Program Organization}\label{ch:file-program-organization}
+
+\section{File Format}\label{sec:file-format}
+
+Source code should be written so that no line exceeds eighty characters
+in length.
+
+A header block should be placed at the top of each file giving the
+author, the date of creation, and, if applicable, the version number.
+This header block should also include a copyright notice and license
+header if applicable.
+
+File names should be clear and concise so that someone can tell the
+general purpose of the file without having to open and read it or its
+header block.
+
+\section{File Structure}\label{file-structure}
+
+Function \emph{declarations} should always be located within a header
+(\texttt{*.h}) file, while function \emph{definitions} should be located
+in a source (\texttt{*.c}) file. If choosing to place documentation for
+the function in only one of these locations, it is best to place it in
+the header file, as the header file is intended to contain a high-level
+overview of each function.
+
+\section{Program Structure}\label{program-structure}
+
+Every effort should be made to avoid the use of global variables.
+Instead, pre-processor macros should be used for constants, and
+variables should be passed and returned between functions.
+
+\end{document}
