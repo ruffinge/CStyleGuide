@@ -18,7 +18,7 @@ File names should be clear and concise so that someone can tell the
 general purpose of the file without having to open and read it or its
 header block.
 
-\section{File Structure}\label{file-structure}
+\section{File Structure}\label{sec:file-structure}
 
 Function \emph{declarations} should always be located within a header
 (\texttt{*.h}) file, while function \emph{definitions} should be located
@@ -27,7 +27,31 @@ the function in only one of these locations, it is best to place it in
 the header file, as the header file is intended to contain a high-level
 overview of each function.
 
-\section{Program Structure}\label{program-structure}
+\subsection{Header Files}\label{subsec:header-files}
+
+Header files should be designed so as to prevent problems from being included
+multiple times. This is to be achieved through the use of the preprocessor macros
+\texttt{\#ifndef} and \texttt{\#endif}, as shown in \autoref{lst:header-layout}.
+It is helpful to place the name of the defined variable in a comment at the
+\texttt{\#endif}, as well.
+
+\begin{code}[caption=Example of header file layout.,label=lst:header-layout]
+/**
+ * @file example.h
+ */
+ 
+#include <stdio.h>
+#include <stdlib.h>
+
+#ifndef EXAMPLE_H_
+#define EXAMPLE_H_
+
+// User code here
+
+#endif /* EXAMPLE_H_ */
+\end{code}
+
+\section{Program Structure}\label{sec:program-structure}
 
 Every effort should be made to avoid the use of global variables.
 Instead, pre-processor macros should be used for constants, and
