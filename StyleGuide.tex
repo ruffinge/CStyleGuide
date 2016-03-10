@@ -123,29 +123,6 @@
 	\renewcommand{\labelenumii}{\theenumii.}
 \usepackage{adjustbox}
 
-\def\secondpage{\clearpage\null\vspace*{0.2\textheight}
-	\pagestyle{empty}
-	\begin{minipage}[t!]{0.9\textwidth}
-		Copyright \copyright 2014--\the\year\ by Ethan Ruffing.\par
-		
-		\begin{figure}[H]
-			\includegraphics[scale=0.9]{by-nc-nd.eps}
-		\end{figure}
-		
-		This work is licensed under the Creative Commons
-		Attribution-NonCommercial-NoDerivatives 4.0 International License. To
-		view a copy of this license, visit
-		\url{http://creativecommons.org/licenses/by-nc-nd/4.0/}.
-	\end{minipage}
-	\vspace*{4\baselineskip}
-	\cleardoublepage
-}
-
-\makeatletter
-\g@addto@macro{\maketitle}{\secondpage}
-\makeatother
-
-
 % The following section makes everything get numbered by section. Comment out to
 % return to normal numbering.
 \usepackage{chngcntr}
@@ -156,9 +133,7 @@
 	\counterwithin{lstlisting}{chapter}
 }
 
-\title{C Style Guide}
-\date{\today}
-\author{Ethan Ruffing}
+\input{metadata.tex}
 
 \begin{document}
 
