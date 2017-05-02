@@ -7,4 +7,7 @@ Copyright &copy; 2014-2016 by Ethan Ruffing.
 This is intended to be a programming style guide for use with the C programming
 language. The entire source is contained in `StyleGuide.tex`.
 
+The most recent releases can be found
+[here](https://github.com/ruffinge/CStyleGuide/releases).
+
 The file has been tested using the TeXLive distribution of LaTeX.
