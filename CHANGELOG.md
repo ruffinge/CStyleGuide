@@ -1,5 +1,8 @@
 CHANGELOG
 =========
+## 0.5.1 ##
+* Minor adjustments to repository and associated data
+
 ## 0.5.0 ##
 * Added licensing under the Creative Commons
   Attribution-NonCommercial-NoDerivatives 4.0 International License
