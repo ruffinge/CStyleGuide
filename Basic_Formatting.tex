@@ -34,18 +34,23 @@ basic guidelines, but can be expanded on to further improve readability.
 
 \subsection{Indentation}\label{indentation}
 
-There seems to be an ongoing war regarding indentation in programming.
-For the purposes of this style guide, we will require the use of hard
-tabs (an actual \texttt{\textbackslash{}t} character). IDEs and text
-editors should be set to use a tab width of four, and alignment of items
-such as comments should be based on this assumption.
 
-There is one exception to this rule (which was alluded to previously):
-When formatting block comments, all text within the block should be
-aligned using spaces in order to guarantee readable documentation
-everywhere. (NOTE, however, that the comment block itself should be
-indented using tabs.)
+There seems to be an ongoing war regarding indentation in programming. Many
+developers prefer hard tabs, while others prefer spaces. This style guide
+recommends a combination of the two: tabs for indentation, and spaces for
+alignment.
 
+Hard tabs (an actual \texttt{\textbackslash{}t} character) shoudl be used to
+indent your code (i.e., within a function, all code is indented one tab
+character past the level of the function definition). IDEs and text editors
+should be set to use a tab width of four, and alignment of items such as
+comments should be based on this assumption.
+
+However, when aligning text within the same indentation level (such as aligning
+lines within a block comment, or aligning function arguments spanning multiple
+lines), spaces should be used to ensure consistent alignment. Tab characters
+should be used to achieve the appropriate indentation, followed by spaces to
+align text.
 \subsection{Blank Lines}\label{blank-lines}
 
 One blank line should always be used in the following locations:
