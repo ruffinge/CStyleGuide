@@ -1,5 +1,10 @@
 CHANGELOG
 =========
+## 0.6.0 ##
+* Added missing 'Basic Formatting' chapter
+* Added line length section to Basic Formatting
+* Improved wording of several portions of Basic Formatting
+
 ## 0.5.1 ##
 * Minor adjustments to repository and associated data
 
