@@ -2,14 +2,14 @@
 
 \begin{document}
 
-\chapter{Basic Formatting}\label{basic-formatting}
+\chapter{Basic Formatting}\label{ch:basic-formatting}
 
 C source files should be written according the the Kernighan and Ritchie
 (K \& R) style. Furthermore, source files should be written according to
 the C11 (ISO/IEC 9899:2011) standard. Extensive documentation on both of
 these can be found online.
 
-\section{Naming}\label{naming}
+\section{Naming}\label{sec:naming}
 
 In general, names should be concise, but long enough to understand
 immediately.
@@ -17,17 +17,17 @@ immediately.
 The following rules are non-negotiable with regards to the case used for
 names.
 
-\subsection{Variables and Functions}\label{variables-and-functions}
+\subsection{Variables and Functions}\label{subsec:variables-and-functions}
 
 All variables and functions should be named in
 \texttt{headlessCamelCase}.
 
-\subsection{Constants and Macros}\label{constants-and-macros}
+\subsection{Constants and Macros}\label{subsec:constants-and-macros}
 
 Constants and pre-processor macros should be named in
 \texttt{SCREAMING\_SNAKE\_CASE}.
 
-\section{Whitespace and Layout}\label{whitespace}
+\section{Whitespace and Layout}\label{sec:whitespace}
 
 Whitespace helps tremendously to improve readability. The following are
 basic guidelines, but can be expanded on to further improve readability.
@@ -35,8 +35,7 @@ Furthermore, the layout of a source file can have a significant impact
 on readability. The layout includes things such as line length, alignment,
 etc.
 
-\subsection{Indentation}\label{indentation}
-
+\subsection{Indentation}\label{subsec:indentation}
 
 There seems to be an ongoing war regarding indentation in programming. Many
 developers prefer hard tabs, while others prefer spaces. This style guide
@@ -85,7 +84,7 @@ int sum = addend1
         + addend5;
 \end{code}
 
-\subsection{Blank Lines}\label{blank-lines}
+\subsection{Blank Lines}\label{subsec:blank-lines}
 
 One blank line should always be used in the following locations:
 
@@ -100,7 +99,7 @@ One blank line should always be used in the following locations:
   Between logically separate sections of code within a function
 \end{itemize}
 
-\subsection{Blank Spaces}\label{blank-spaces}
+\subsection{Blank Spaces}\label{subsec:blank-spaces}
 
 Blank spaces should be used in the following locations in order to enhance
 readability (an example is shown in \autoref{lst:spacing-example}):
@@ -131,7 +130,7 @@ void example(int a) {
 }
 \end{code}
 
-\subsection{Braces}\label{braces}
+\subsection{Braces}\label{subsec:braces}
 
 \begin{itemize}
 \item
