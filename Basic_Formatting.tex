@@ -2,14 +2,14 @@
 
 \begin{document}
 
-\chapter{Basic Formatting}\label{basic-formatting}
+\chapter{Basic Formatting}\label{ch:basic-formatting}
 
 C source files should be written according the the Kernighan and Ritchie
 (K \& R) style. Furthermore, source files should be written according to
 the C11 (ISO/IEC 9899:2011) standard. Extensive documentation on both of
 these can be found online.
 
-\section{Naming}\label{naming}
+\section{Naming}\label{sec:naming}
 
 In general, names should be concise, but long enough to understand
 immediately.
@@ -17,36 +17,74 @@ immediately.
 The following rules are non-negotiable with regards to the case used for
 names.
 
-\subsection{Variables and Functions}\label{variables-and-functions}
+\subsection{Variables and Functions}\label{subsec:variables-and-functions}
 
 All variables and functions should be named in
 \texttt{headlessCamelCase}.
 
-\subsection{Constants and Macros}\label{constants-and-macros}
+\subsection{Constants and Macros}\label{subsec:constants-and-macros}
 
 Constants and pre-processor macros should be named in
 \texttt{SCREAMING\_SNAKE\_CASE}.
 
-\section{Whitespace}\label{whitespace}
+\section{Whitespace and Layout}\label{sec:whitespace}
 
 Whitespace helps tremendously to improve readability. The following are
 basic guidelines, but can be expanded on to further improve readability.
+Furthermore, the layout of a source file can have a significant impact
+on readability. The layout includes things such as line length, alignment,
+etc.
 
-\subsection{Indentation}\label{indentation}
+\subsection{Indentation}\label{subsec:indentation}
 
-There seems to be an ongoing war regarding indentation in programming.
-For the purposes of this style guide, we will require the use of hard
-tabs (an actual \texttt{\textbackslash{}t} character). IDEs and text
-editors should be set to use a tab width of four, and alignment of items
-such as comments should be based on this assumption.
+There seems to be an ongoing war regarding indentation in programming. Many
+developers prefer hard tabs, while others prefer spaces. This style guide
+recommends a combination of the two: tabs for indentation, and spaces for
+alignment.
 
-There is one exception to this rule (which was alluded to previously):
-When formatting block comments, all text within the block should be
-aligned using spaces in order to guarantee readable documentation
-everywhere. (NOTE, however, that the comment block itself should be
-indented using tabs.)
+Hard tabs (an actual \texttt{\textbackslash{}t} character) shoudl be used to
+indent your code (i.e., within a function, all code is indented one tab
+character past the level of the function definition). IDEs and text editors
+should be set to use a tab width of four, and alignment of items such as
+comments should be based on this assumption.
 
-\subsection{Blank Lines}\label{blank-lines}
+However, when aligning text within the same indentation level (such as aligning
+lines within a block comment, or aligning function arguments spanning multiple
+lines), spaces should be used to ensure consistent alignment. Tab characters
+should be used to achieve the appropriate indentation, followed by spaces to
+align text.
+
+\subsection{Line Length}\label{subsec:line-length}
+Lines should never be permitted to exceed 80 characters in length. (When
+calculating a line's length, treat a tab character as eight characters.)
+
+Be consistent and sane in your choice of where a line is broken: always break
+before an operator (e.g., break before a '+'), never break before a comma, etc.
+
+Additionally, when breaking a line, make sure the continuation (the next line)
+is indented one level past the original line, as shown in
+\autoref{lst:simple-break-example}.
+
+\begin{code}[caption=Simple line break example, label=lst:simple-break-example]
+callfunction(many, many, many, arguments
+    that, must, be, continued, on, the, next,
+    line);
+\end{code}
+
+When breaking a long line with repeated components (such as a long list of additions),
+align the repeated components to the same indentation level (e.g., align all addends
+in a broken addition statement). An example of this is shown in
+\autoref{lst:align-break-example}.
+
+\begin{code}[caption=Aligned line break example, label=lst:align-break-example]
+int sum = addend1
+        + addend2
+        + addend3
+        + addend4
+        + addend5;
+\end{code}
+
+\subsection{Blank Lines}\label{subsec:blank-lines}
 
 One blank line should always be used in the following locations:
 
@@ -61,7 +99,7 @@ One blank line should always be used in the following locations:
   Between logically separate sections of code within a function
 \end{itemize}
 
-\subsection{Blank Spaces}\label{blank-spaces}
+\subsection{Blank Spaces}\label{subsec:blank-spaces}
 
 Blank spaces should be used in the following locations in order to enhance
 readability (an example is shown in \autoref{lst:spacing-example}):
@@ -92,7 +130,7 @@ void example(int a) {
 }
 \end{code}
 
-\subsection{Braces}\label{braces}
+\subsection{Braces}\label{subsec:braces}
 
 \begin{itemize}
 \item

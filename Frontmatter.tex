@@ -2,6 +2,18 @@
 
 \begin{document}
 
+% Create title page
+\begin{titlepage}
+	\maketitle
+	\copyrightpage
+	\thispagestyle{empty}
+\end{titlepage}
+\pagenumbering{roman} % Number pages i, ii, ...
+
+% Generate table of contents
+\tableofcontents
+
+\newpage
 \chapter*{Introduction}\label{ch:introduction}
 \addcontentsline{toc}{chapter}{Introduction}
 When programming, it is essential for all programmers on a project to follow a
@@ -13,5 +25,8 @@ programmers to easily understand and use new source code.
 This style guide is intended to provide a unifying basis for programming in the
 C programming language, and to provide a standard for documenting the programs
 created.
+
+\cleardoublepage
+\pagenumbering{arabic} % Number pages 1, 2, ...
 
 \end{document}
